@@ -1,0 +1,12 @@
+{% extends 'contenedor/base.html' %}
+
+{% block content %}
+	<form id="user_control_add_user" method="POST" >
+		{% csrf_token %}
+		
+		<table>
+			{{form}}
+		</table>
+		<input type="submit" value="Agregar"/>
+	</form>
+{% endblock %}
