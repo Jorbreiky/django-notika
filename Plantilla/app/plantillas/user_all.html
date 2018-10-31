@@ -1,0 +1,43 @@
+{% extends 'contendor/base.html' %}
+{% block content %}
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<div class="panel-title"><h4>Post List</h4></div>
+				<div>
+					<a class="btn btn-info" href="/user/add/" > <i class="fa fa-plus"></i></a>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table id="data-table-basic" class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Nombre</th>
+								<th>Apellidos</th>
+								<th>Fecha Creacion</th>
+								<th>Accion</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for user in users %}
+								<tr>
+									<td> <input type="check" /> </td>
+									<td>{{ user.nombre }}</td>
+									<td>{{ user.apellidos }}</td>
+									<td>{{ user.c_time }}</td>
+									<td>
+										<a class="btn btn-info" href="/user/edit/{{user.user_id}}/"> <i class="fa fa-pencil"></i></a>
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+						<tfoot>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	{%  endblock %}
